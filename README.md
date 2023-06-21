@@ -1,11 +1,10 @@
-# Beakfast (Grupo 1)
+# RentACar (Grupo 1)
 
 ## Clases
 
-- Josue bieber : Producto
-- Agustin Fuentes : Supermercado
-- Juan Manuel Gonzalez: Venta
-- Nicolas Garcia: Main
+- Juelieta Corti : 
+- Franco Mel : 
+- Nicolas Garcia: 
 
 <center>
 <img src="DiagramaUML.png" height="250"/>
