@@ -7,10 +7,6 @@ package tp.grupal;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-/**
- *
- * @author ET36
- */
 public class Ejecutable {
 
     public static void main(String[] args) {
@@ -29,29 +25,10 @@ public class Ejecutable {
         
         reserva1.agregarAuto(auto1);
         reserva2.agregarAuto(auto2);
-        reserva2.agregarAuto(auto3);
+        reserva2.agregarAuto(auto3); 
         
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-       
+       reserva1.imprimirTicket();
+       reserva2.imprimirTicket();
     }
     
 }

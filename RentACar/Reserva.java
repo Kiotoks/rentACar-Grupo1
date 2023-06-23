@@ -79,15 +79,16 @@ public class Reserva {
     }
     
     public void imprimirTicket(){
-    String text = "";
-    text += "Numero de factura: " + this.numero_factura;
-    text += "Fecha de inicio: " + this.fechaIni;
-    text += "Fecha final: " + this.fechaFin;
-    for(Auto a: autos){
-        text += a.toString();
+        String text = "";
+        text += "Numero de factura: " + this.numero_factura;
+        text += "Fecha de inicio: " + this.fechaIni;
+        text += "Fecha final: " + this.fechaFin;
+        for(Auto a: autos){
+            text += a.toString();
         
-    }
-    text += "Cliente: " + cli.toString();
+        }
+        text += "Cliente: " + cli.toString();
+        System.out.println(text);
     
     }
     
