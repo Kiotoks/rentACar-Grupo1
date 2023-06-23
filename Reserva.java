@@ -5,10 +5,12 @@
 package tp.grupal;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 
 public class Reserva {
-    private double codRe;
+    private static int  codRe = 100;
+    private int numero_factura;
     private Cliente cli;
     private LocalDate fechaIni;
     private LocalDate fechaFin;
@@ -16,50 +18,30 @@ public class Reserva {
     private double precio;
     ArrayList<Auto> autos;
 
-    public Reserva(double codRe, Cliente cli, LocalDate fechaFin) {
-        this.codRe = codRe;
+    public Reserva(Cliente cli, LocalDate fechaFin) {
+        this.numero_factura = Reserva.codRe++;
         this.cli = cli;
         this.fechaFin = fechaFin;
+        this.fechaIni = LocalDate.now();
+        this.dias = calcularDias();
     }
 
-    public Reserva(double codRe, Cliente cli, int dias) {
-        this.codRe = codRe;
+    public Reserva(Cliente cli, int dias) {
+         this.numero_factura = Reserva.codRe++;
         this.cli = cli;
         this.dias = dias;
+        this.fechaIni = LocalDate.now();
+        calcularFecha();
     }
 
     public double getCodRe() {
         return codRe;
     }
 
-    public void setCodRe(double codRe) {
-        this.codRe = codRe;
-    }
-
     public Cliente getCli() {
         return cli;
     }
-
-    public void setCli(Cliente cli) {
-        this.cli = cli;
-    }
-
-    public LocalDate getFechaIni() {
-        return fechaIni;
-    }
-
-    public void setFechaIni(LocalDate fechaIni) {
-        this.fechaIni = fechaIni;
-    }
-
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
-    }
-
+    
     public int getDias() {
         return dias;
     }
@@ -80,10 +62,34 @@ public class Reserva {
         return autos;
     }
 
-    public void addAutos(Auto a) {
+    public void agregarAuto(Auto a) {
        this.autos.add(a);
     }
     
+    public void calcularFecha(){
+        fechaFin = fechaIni.plusDays(dias);
+    }
+    public int calcularDias(){
+        Period periodo = Period.between(fechaIni, fechaFin);
+        return periodo.getDays();
+    }
+    public int calcularPrecio(int d, int p) {
+  
+        return d * p;
+    }
+    
+    public void imprimirTicket(){
+    String text = "";
+    text += "Numero de factura: " + this.numero_factura;
+    text += "Fecha de inicio: " + this.fechaIni;
+    text += "Fecha final: " + this.fechaFin;
+    for(Auto a: autos){
+        text += a.toString();
+        
+    }
+    text += "Cliente: " + cli.toString();
+    
+    }
     
 }
 

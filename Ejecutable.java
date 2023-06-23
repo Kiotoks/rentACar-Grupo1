@@ -4,17 +4,54 @@
  */
 package tp.grupal;
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 /**
  *
  * @author ET36
  */
 public class Ejecutable {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Scanner teclado = new Scanner(System.in);
+        
+        Auto auto1 = new Auto("45567","palio", "gris", "fiat", 123124);
+        Auto auto2 = new Auto("34567","clio", "rojo", "renault", 10234);
+        Auto auto3 = new Auto("12456","Prisma", "gris", "chevrolet", 30334);
+        
+        Cliente cliente1 = new Cliente( 1, "Roberto", "46789000", "San Martin", "011345678");
+        Cliente cliente2 = new Cliente( 2, "Juan", "54678123", "Pilar", "0112145678");  
+        
+        Reserva reserva1 = new Reserva ( cliente1, LocalDate.of(2023,7,21);
+        Reserva reserva2 = new Reserva ( cliente2, 10);
+        
+        reserva1.agregarAuto(auto1);
+        reserva2.agregarAuto(auto2);
+        reserva2.agregarAuto(auto3);
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
     }
     
 }
