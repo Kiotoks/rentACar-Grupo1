@@ -16,7 +16,7 @@ public class Reserva {
     private LocalDate fechaFin;
     private int dias;
     private double precio;
-    ArrayList<Auto> autos;
+    ArrayList<Auto> autos; // Si no se instancia NO COMPILA
 
     public Reserva(Cliente cli, LocalDate fechaFin) {
         this.numero_factura = Reserva.codRe++;
@@ -73,8 +73,9 @@ public class Reserva {
         Period periodo = Period.between(fechaIni, fechaFin);
         return periodo.getDays();
     }
+    // método incorrecto, NO debe recibir parámetros
     public int calcularPrecio(int d, int p) {
-  
+  // necesitan recorrer el array
         return d * p;
     }
     
